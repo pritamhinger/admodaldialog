@@ -8,14 +8,40 @@
 
 import UIKit
 
-class ADModalStatusView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+public class ADModalStatusView: UIView {
+    
+    // MARK: - Private Variables
+    let nibName = "ADModalStatusView"
+    var contentView: UIView!
+    
+    // MARK: - IBOutlets
+    @IBOutlet private weak var statusImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subHeadingLabel: UILabel!
+    
+    // MARK: - Initializer
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpView()
     }
-    */
-
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setUpView()
+    }
+    
+    // MARK: - Private Methods
+    private func setUpView() {
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: self.nibName, bundle: bundle)
+        self.contentView = nib.instantiate(withOwner: self, options: nil).first as! UIView
+        addSubview(self.contentView)
+        
+        contentView.center = self.center
+        contentView.autoresizingMask = []
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        
+        titleLabel.text = ""
+        subHeadingLabel.text = ""
+    }
 }

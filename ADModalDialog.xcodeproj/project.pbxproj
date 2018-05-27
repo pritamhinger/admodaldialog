@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48085B6020BAE06C007DA957 /* ADModalStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48085B5F20BAE06C007DA957 /* ADModalStatusView.xib */; };
+		48085B6220BAFE24007DA957 /* ADModalStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48085B6120BAFE24007DA957 /* ADModalStatusView.swift */; };
 		482A898920BAD5F2004821B9 /* ADModalDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 482A897F20BAD5F2004821B9 /* ADModalDialog.framework */; };
 		482A898E20BAD5F2004821B9 /* ADModalDialogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482A898D20BAD5F2004821B9 /* ADModalDialogTests.swift */; };
 		482A899020BAD5F2004821B9 /* ADModalDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 482A898220BAD5F2004821B9 /* ADModalDialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48085B5F20BAE06C007DA957 /* ADModalStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADModalStatusView.xib; sourceTree = "<group>"; };
+		48085B6120BAFE24007DA957 /* ADModalStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADModalStatusView.swift; sourceTree = "<group>"; };
 		482A897F20BAD5F2004821B9 /* ADModalDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ADModalDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		482A898220BAD5F2004821B9 /* ADModalDialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADModalDialog.h; sourceTree = "<group>"; };
 		482A898320BAD5F2004821B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 			children = (
 				482A898220BAD5F2004821B9 /* ADModalDialog.h */,
 				482A898320BAD5F2004821B9 /* Info.plist */,
+				48085B5F20BAE06C007DA957 /* ADModalStatusView.xib */,
+				48085B6120BAFE24007DA957 /* ADModalStatusView.swift */,
 			);
 			path = ADModalDialog;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					482A897E20BAD5F2004821B9 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					482A898720BAD5F2004821B9 = {
 						CreatedOnToolsVersion = 9.3;
@@ -177,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48085B6020BAE06C007DA957 /* ADModalStatusView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48085B6220BAFE24007DA957 /* ADModalStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +348,7 @@
 		482A899420BAD5F2004821B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appdevelapp.ADModalDialog;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +375,7 @@
 		482A899520BAD5F2004821B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +401,7 @@
 		482A899720BAD5F2004821B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QK5A5T3HGQ;
 				INFOPLIST_FILE = ADModalDialogTests/Info.plist;
@@ -407,6 +420,7 @@
 		482A899820BAD5F2004821B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QK5A5T3HGQ;
 				INFOPLIST_FILE = ADModalDialogTests/Info.plist;
