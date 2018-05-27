@@ -30,6 +30,19 @@ public class ADModalStatusView: UIView {
         setUpView()
     }
     
+    // MARK: - Public Methods
+    public func set(image: UIImage){
+        self.statusImageView.image = image
+    }
+    
+    public func set(title text: String) {
+        self.titleLabel.text = text
+    }
+    
+    public func set(subHeading text: String) {
+        self.subHeadingLabel.text = text
+    }
+    
     // MARK: - Private Methods
     private func setUpView() {
         let bundle = Bundle(for: type(of: self))
