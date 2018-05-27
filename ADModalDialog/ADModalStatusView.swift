@@ -13,6 +13,7 @@ public class ADModalStatusView: UIView {
     // MARK: - Private Variables
     let nibName = "ADModalStatusView"
     var contentView: UIView!
+    var timer: Timer?
     
     // MARK: - IBOutlets
     @IBOutlet private weak var statusImageView: UIImageView!
@@ -28,6 +29,11 @@ public class ADModalStatusView: UIView {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpView()
+    }
+    
+    // MARK: - Overridden Methods
+    public override func didMoveToSuperview() {
+        self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: self, selector: #selector(removeSelf), userInfo: nil, repeats: false)
     }
     
     // MARK: - Public Methods
@@ -56,5 +62,12 @@ public class ADModalStatusView: UIView {
         
         titleLabel.text = ""
         subHeadingLabel.text = ""
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(removeSelf))
+        addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func removeSelf() {
+        self.removeFromSuperview()
     }
 }
