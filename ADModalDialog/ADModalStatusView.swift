@@ -36,6 +36,13 @@ public class ADModalStatusView: UIView {
         self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: self, selector: #selector(removeSelf), userInfo: nil, repeats: false)
     }
     
+    public override func layoutSubviews() {
+        self.layoutIfNeeded()
+        self.contentView.layer.masksToBounds = true
+        self.contentView.clipsToBounds = true
+        self.contentView.layer.cornerRadius = 10.0
+    }
+    
     // MARK: - Public Methods
     public func set(image: UIImage){
         self.statusImageView.image = image
