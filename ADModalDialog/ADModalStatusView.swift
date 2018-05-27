@@ -33,7 +33,13 @@ public class ADModalStatusView: UIView {
     
     // MARK: - Overridden Methods
     public override func didMoveToSuperview() {
-        self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: self, selector: #selector(removeSelf), userInfo: nil, repeats: false)
+        self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        UIView.animate(withDuration: 0.15, animations: {
+            self.contentView.alpha = 1.0
+            self.contentView.transform = CGAffineTransform.identity
+        }) { _ in
+            self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: self, selector: #selector(self.removeSelf), userInfo: nil, repeats: false)
+        }
     }
     
     public override func layoutSubviews() {
@@ -66,7 +72,9 @@ public class ADModalStatusView: UIView {
         contentView.center = self.center
         contentView.autoresizingMask = []
         contentView.translatesAutoresizingMaskIntoConstraints = true
+        contentView.alpha = 0
         
+        statusImageView.contentMode = .scaleAspectFit
         titleLabel.text = ""
         subHeadingLabel.text = ""
         
@@ -75,6 +83,10 @@ public class ADModalStatusView: UIView {
     }
     
     @objc private func removeSelf() {
-        self.removeFromSuperview()
+        UIView.animate(withDuration: 0.15, animations: {
+            self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        }) { _ in
+            self.removeFromSuperview()
+        }
     }
 }
